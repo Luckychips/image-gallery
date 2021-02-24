@@ -45,6 +45,7 @@
     "@craco/craco": "^6.1.1",
     "@emotion/babel-preset-css-prop": "^11.2.0",
     "@types/jest": "^26.0.20",
-    "craco-alias": "^2.1.1"
+    "craco-alias": "^2.1.1",
+    "prettier": "^2.2.1"
   }
 }

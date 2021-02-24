@@ -2,11 +2,7 @@
   "extends": "./config/tsconfig.extend.json",
   "compilerOptions": {
     "target": "es6",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -24,11 +20,6 @@
     "sourceMap": true,
     "baseUrl": "./src"
   },
-  "include": [
-    "src",
-    "@types"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src", "@types"],
+  "exclude": ["node_modules"]
 }
