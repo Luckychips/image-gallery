@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion-icons/fa-solid": "^3.6.0",
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
     "@testing-library/jest-dom": "^5.11.4",
@@ -21,7 +22,9 @@
     "ts-check": "tsc --skipLibCheck --noEmit",
     "start": "yarn ts-check && craco start",
     "build": "craco build",
-    "test": "craco test"
+    "test": "craco test",
+    "lint": "eslint .",
+    "pretty": "prettier --write ."
   },
   "eslintConfig": {
     "extends": [
