@@ -1,12 +1,27 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 import { MOUSE_CLICK_EVENT } from '@variables/constant';
 
+type GalleryProps = {
+  list: string[];
+};
+
+type ImageProps = {
+  backgroundImage: string;
+};
+
 const Wrapper = styled.div`
-  font-weight: bold; 
+  font-weight: bold;
 `;
 
-const Gallery = () => {
+const Image = styled.div`
+  width: 300px;
+  height: 300px;
+  background-image: ${({backgroundImage}: ImageProps) => backgroundImage};
+  background-repeat: no-repeat;
+`;
+
+const Gallery = ({ list }: GalleryProps) => {
   const [isPressedLeft, setIsPressedLeft] = useState(true);
 
   const onMouseDown = (event: MouseEvent) => {
@@ -21,7 +36,6 @@ const Gallery = () => {
     // console.log('on wheel : ');
   };
 
-
   return (
     <Wrapper
       draggable={true}
@@ -29,7 +43,7 @@ const Gallery = () => {
       onDragStart={(event) => onDragStart(event.nativeEvent)}
       onWheel={(event) => onWheel(event.nativeEvent)}
     >
-      <img src="http://live.staticflickr.com/65535/50964337567_a56d11e037_n.jpg" alt="image-from-flickr" />
+      <Image backgroundImage={list[0]} />
     </Wrapper>
   );
 };

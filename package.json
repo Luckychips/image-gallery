@@ -1,59 +1,13 @@
 {
   "name": "image-gallery",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@emotion-icons/fa-solid": "^3.6.0",
-    "@emotion/react": "^11.1.5",
-    "@emotion/styled": "^11.1.5",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "@types/node": "^12.0.0",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.3",
-    "typescript": "^4.1.2",
-    "web-vitals": "^1.0.1"
-  },
+  "version": "1.0.0",
+  "description": "heuron coding test",
   "scripts": {
-    "ts-check": "tsc --skipLibCheck --noEmit",
-    "start": "yarn ts-check && craco start",
-    "build": "craco build",
-    "test": "craco test",
-    "lint": "eslint .",
-    "pretty": "prettier --write ."
+    "initialize": "yarn install",
+    "backend": "cd backend && yarn install && yarn start",
+    "frontend": "cd frontend && yarn install && yarn start",
+    "start": "concurrently \"yarn initialize\" \"yarn backend\" \"yarn frontend\""
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@craco/craco": "^6.1.1",
-    "@emotion/babel-preset-css-prop": "^11.2.0",
-    "@types/jest": "^26.0.20",
-    "@typescript-eslint/eslint-plugin": "^4.15.2",
-    "@typescript-eslint/parser": "^4.15.2",
-    "craco-alias": "^2.1.1",
-    "eslint": "^7.20.0",
-    "eslint-config-prettier": "^8.0.0",
-    "eslint-plugin-react": "^7.22.0",
-    "prettier": "^2.2.1"
-  }
+  "author": "sungjin.qim@gmail.com",
+  "license": "MIT"
 }
