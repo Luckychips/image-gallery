@@ -4,7 +4,7 @@ import { Spinner } from '@emotion-icons/fa-solid';
 
 const Wrapper = styled.div`
   text-align: center;
-  margin-top: 35px;
+  margin-top: 100px;
   @keyframes spinner {
     0% {
       transform: rotate(0deg);
@@ -21,7 +21,7 @@ const Wrapper = styled.div`
 const LoadingIndicator = () => {
   return (
     <Wrapper>
-      <Spinner size={30} color="#376fe0" />
+      <Spinner size={100} color="#376fe0" />
     </Wrapper>
   );
 };
