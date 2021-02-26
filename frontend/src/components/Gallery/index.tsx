@@ -8,11 +8,11 @@ type GalleryProps = {
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 100vh; 
+  height: 100vh;
   font-weight: bold;
 `;
 
-const HiddenImage = styled.img` 
+const HiddenImage = styled.img`
   display: none;
 `;
 
@@ -85,7 +85,7 @@ const Gallery = ({ list }: GalleryProps) => {
     if (canvasContext && imageRef.current) {
       if (imageRef.current) {
         canvasContext.clearRect(0, 0, canvasWidth, canvasHeight);
-        canvasContext.drawImage(imageRef.current, 0, 0,  canvasWidth,  canvasHeight);
+        canvasContext.drawImage(imageRef.current, 0, 0, canvasWidth, canvasHeight);
       }
     }
   };
@@ -101,7 +101,7 @@ const Gallery = ({ list }: GalleryProps) => {
       canvasContext.clearRect(0, 0, canvasWidth, canvasHeight);
       canvasContext.save();
       canvasContext.translate(canvasWidth / 2, canvasHeight / 2);
-      canvasContext.rotate(rotateDegree * Math.PI / 180);
+      canvasContext.rotate((rotateDegree * Math.PI) / 180);
       canvasContext.drawImage(imageRef.current, -canvasWidth / 2, -canvasHeight / 2, canvasWidth, canvasHeight);
       canvasContext.restore();
       setPreviousClientPosition(previousMouseMoveEvent!.clientX);
@@ -109,7 +109,9 @@ const Gallery = ({ list }: GalleryProps) => {
   };
 
   useEffect(() => {
-    const onContextMenu = (event: MouseEvent) => {event.preventDefault()};
+    const onContextMenu = (event: MouseEvent) => {
+      event.preventDefault();
+    };
     document.addEventListener('contextmenu', onContextMenu);
     return () => {
       document.removeEventListener('contextmenu', onContextMenu);
@@ -131,7 +133,7 @@ const Gallery = ({ list }: GalleryProps) => {
   useEffect(() => {
     imageRef.current!.onload = () => {
       draw();
-    }
+    };
   }, [canvasContext, imageRef]);
 
   useEffect(() => {
@@ -145,15 +147,15 @@ const Gallery = ({ list }: GalleryProps) => {
   return (
     <Wrapper onMouseUp={(event) => onMouseUp(event.nativeEvent)}>
       <canvas
-          ref={canvasRef}
-          width={canvasWidth}
-          height={canvasHeight}
-          draggable={true}
-          onMouseDown={(event) => onMouseDown(event.nativeEvent)}
-          onMouseMove={(event) => onMouseMove(event.nativeEvent)}
-          onDragStart={(event) => onDragStart(event.nativeEvent)}
-          onDrag={(event) => onDrag(event.nativeEvent)}
-          onWheel={(event) => onWheel(event.nativeEvent)}
+        ref={canvasRef}
+        width={canvasWidth}
+        height={canvasHeight}
+        draggable={true}
+        onMouseDown={(event) => onMouseDown(event.nativeEvent)}
+        onMouseMove={(event) => onMouseMove(event.nativeEvent)}
+        onDragStart={(event) => onDragStart(event.nativeEvent)}
+        onDrag={(event) => onDrag(event.nativeEvent)}
+        onWheel={(event) => onWheel(event.nativeEvent)}
       />
       <HiddenImage ref={imageRef} src={`http://${list[currentIndex]}`} alt="hi" />
     </Wrapper>

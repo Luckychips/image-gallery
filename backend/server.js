@@ -27,8 +27,8 @@ app.get("/images", async (req, res) => {
 
   $imageList.each((index, elem) => {
     let imageInfo = $(elem).css("background-image");
-    imageInfo = imageInfo.replace('url(//', '');
-    imageInfo = imageInfo.replace(')', '');
+    imageInfo = imageInfo.replace("url(//", "");
+    imageInfo = imageInfo.replace(")", "");
     images.push(imageInfo);
   });
 

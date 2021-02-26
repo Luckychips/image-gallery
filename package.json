@@ -9,5 +9,8 @@
     "start": "concurrently \"yarn initialize\" \"yarn backend\" \"yarn frontend\""
   },
   "author": "sungjin.qim@gmail.com",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^6.0.0"
+  }
 }
